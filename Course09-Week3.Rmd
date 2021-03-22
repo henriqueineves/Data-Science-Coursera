@@ -1,0 +1,47 @@
+---
+title: "Course09 - Week 3 Assignment"
+author: "Henrique I. Neves"
+date: "19/03/2021"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(plotly)
+```
+
+## Course 09 - Week 3 Assignment
+A simple slide presentation as the peer review process for the Data Science Specialization.
+
+In this assignment, a simple presentation on R Markdown in presented, that contain a
+graph done with plotly package.
+
+## The dataset
+To show the different graph, we are going to work with the *mtcars* dataset, which contain several numerical data:
+```{r, verbose = FALSE}
+head(mtcars)
+```
+
+## Graph 1
+A histogram with the data from the **carb** column in mtcars:
+```{r, echo = FALSE}
+plot_ly(x = mtcars$carb, type = "histogram")
+```
+
+## Graph 2
+Is the displacement related with the gross horse power?
+```{r, echo = FALSE, error = FALSE}
+plot_ly(data = mtcars, x = ~hp, y = ~disp, type = 'scatter', mode = 'markers')
+```
+It appears that yes.
+
+## Graph3
+A 2D histogram... because why not?
+```{r, echo = FALSE}
+plot_ly(data = mtcars, x = ~cyl, y = ~gear, type = "histogram2d")
+```
+
+## That's all folks!
+Thank you for your attention!
+
+Have a nice week.
